@@ -3,6 +3,7 @@ import 'package:http/http.dart' as http;
 import 'dart:async';
 import 'dart:convert';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:webview_flutter/webview_flutter.dart';
 
 class NewsList extends StatefulWidget {
   final String source;
@@ -44,7 +45,12 @@ class _NewsListState extends State<NewsList> {
         itemBuilder: (BuildContext context, int index) {
           return GestureDetector(
             onTap: () {
-              print('aw');
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => NewsWeb(news: newsData[index]['url'])
+                ),
+              );
             },
             child: Card(
               child: Row(
@@ -53,6 +59,25 @@ class _NewsListState extends State<NewsList> {
             ),
           );
         },
+      ),
+    );
+  }
+}
+
+class NewsWeb extends StatelessWidget {
+  final String news;
+
+  NewsWeb({Key key, @required this.news}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(news),
+      ),
+      body: 
+      WebView(
+        initialUrl: news,
       ),
     );
   }
