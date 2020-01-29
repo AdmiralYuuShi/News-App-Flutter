@@ -3,26 +3,28 @@ import 'package:http/http.dart' as http;
 import 'dart:async';
 import 'dart:convert';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
-import 'package:news_app/screens/news_list.dart';
 
-class NewsSource extends StatefulWidget {
+class NewsList extends StatefulWidget {
+  final String source;
+
+  NewsList({Key key, @required this.source}) : super(key: key);
+
   @override
-  _NewsSourceState createState() => _NewsSourceState();
+  _NewsListState createState() => _NewsListState();
 }
 
-class _NewsSourceState extends State<NewsSource> {
+class _NewsListState extends State<NewsList> {
   Map data;
-  List sourceData;
+  List newsData;
 
   Future getSource() async {
     http.Response response = await http.get(
-        "https://newsapi.org/v2/sources?apiKey=" +
-            DotEnv().env['NEWS_API_KEY']);
+        "https://newsapi.org/v2/everything?sources="+widget.source+"&apiKey="+DotEnv().env['NEWS_API_KEY']);
     data = json.decode(response.body);
     setState(() {
-      sourceData = data['sources'];
+      newsData = data['articles'];
     });
-    debugPrint(sourceData.toString());
+    debugPrint(newsData.toString());
   }
 
   @override
@@ -35,24 +37,18 @@ class _NewsSourceState extends State<NewsSource> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('News App'),
-        centerTitle: true,
+        title: Text(widget.source),
       ),
       body: ListView.builder(
-        itemCount: sourceData == null ? 0 : sourceData.length,
+        itemCount: newsData == null ? 0 : newsData.length,
         itemBuilder: (BuildContext context, int index) {
           return GestureDetector(
             onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => NewsList(source: sourceData[index]['id'])
-                ),
-              );
+              print('aw');
             },
             child: Card(
               child: Row(
-                children: <Widget>[Text(sourceData[index]['name'])],
+                children: <Widget>[Text(newsData[index]['title'])],
               ),
             ),
           );
