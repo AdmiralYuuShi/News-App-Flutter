@@ -3,7 +3,7 @@ import 'package:http/http.dart' as http;
 import 'dart:async';
 import 'dart:convert';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
-import 'package:webview_flutter/webview_flutter.dart';
+import 'package:news_app/screens/news_web.dart';
 
 class NewsList extends StatefulWidget {
   final String source;
@@ -59,25 +59,6 @@ class _NewsListState extends State<NewsList> {
             ),
           );
         },
-      ),
-    );
-  }
-}
-
-class NewsWeb extends StatelessWidget {
-  final String news;
-
-  NewsWeb({Key key, @required this.news}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(news),
-      ),
-      body: 
-      WebView(
-        initialUrl: news,
       ),
     );
   }
