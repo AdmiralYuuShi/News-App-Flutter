@@ -4,6 +4,7 @@ import 'dart:async';
 import 'dart:convert';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:news_app/screens/news_list.dart';
+import 'package:flag/flag.dart';
 
 class NewsSource extends StatefulWidget {
   @override
@@ -46,13 +47,15 @@ class _NewsSourceState extends State<NewsSource> {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => NewsList(source: sourceData[index]['id'])
+                  builder: (context) => NewsList(source: sourceData[index]['id'], name: sourceData[index]['name'])
                 ),
               );
             },
             child: Card(
-              child: Row(
-                children: <Widget>[Text(sourceData[index]['name'])],
+              child: ListTile(
+                leading: Text(sourceData[index]['name'].toString()[0], style: TextStyle(fontSize: 50.0, fontWeight: FontWeight.bold),),
+                title: Text(sourceData[index]['name']),
+                trailing: Flags.getMiniFlag(sourceData[index]['country'].toString().toUpperCase() == 'ZH' ? 'CN' : sourceData[index]['country'].toString().toUpperCase(), null, 30),
               ),
             ),
           );
