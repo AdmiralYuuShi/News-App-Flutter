@@ -1,16 +1,61 @@
-# news_app
+<h1 align="center">News App</h1>
+<p align="center">
+  Built with <b>Flutter</b>.
+</p>
 
-A new Flutter project.
+## Table of Contents
 
-## Getting Started
+- [Introduction](#introduction)
+- [Features](#features)
+- [Requirements](#requirements)
+- [Usage](#usage-for-development)
+- [Screenshots](#screenshots)
+- [Release APK](#release-apk)
+- [Contributors](#contributors)
 
-This project is a starting point for a Flutter application.
+## Introduction
+<b>News App</b> is a mobile application where we can see list of news source around the world and we can choose one of these news list to see a list of articles from that source, then when we click the article we can read that article.
 
-A few resources to get you started if this is your first Flutter project:
+## Features
+* Pick the source of news
+* See a list of articles from one source
+* Search a article
+* Read the article on Web View
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+## Requirements
+* [`flutter`](https://flutter.dev/docs/get-started/install)
+* [`API Key from News API`](https://newsapi.org/docs/get-started)
+* [`News App`](https://github.com/AdmiralYuuShi/News-App-Flutter)
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Usage for development
+1. Open your terminal or command prompt
+2. Type `git clone https://github.com/AdmiralYuuShi/News-App-Flutter.git`
+3. Open the folder and type `flutter pub get` for install dependencies
+4. Create .env file on root project folder and add following :
+```
+NEWS_API_KEY=[your News API key]
+```
+5. On Visual Studio Code, Press f5 for run this app on debug mode. ***Make sure your device is connected with debugging mode***.
+
+## Screenshots
+<!-- <div align="center">
+    <img width="200" src="./screenshots/any-ss.jpeg">
+</div> -->
+
+## Release APK
+<a href="https://drive.google.com/">
+  <img src="https://img.shields.io/badge/Download%20on%20the-Google%20Drive-blue.svg?style=popout&logo=google-drive"/>
+</a>
+
+## Contributors
+<center>
+  <table>
+    <tr>
+      <td align="center">
+        <a href="https://github.com/AdmiralYuuShi">
+          <sub><b>Hapid Moch Jamil (Admiral YuuShi)</b></sub>
+        </a>
+      </td>
+    </tr>
+  </table>
+</center>
