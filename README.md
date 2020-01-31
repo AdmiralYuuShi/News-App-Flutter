@@ -1,8 +1,10 @@
 <h1 align="center">News App</h1>
 <p align="center">
+  <img width="200" src="https://cdn.worldvectorlogo.com/logos/flutter-logo.svg"/>
+</p>
+<p align="center">
   Built with <b>Flutter</b>.
 </p>
-
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -38,12 +40,15 @@ NEWS_API_KEY=[your News API key]
 5. On Visual Studio Code, Press f5 for run this app on debug mode. ***Make sure your device is connected with debugging mode***.
 
 ## Screenshots
-<!-- <div align="center">
-    <img width="200" src="./screenshots/any-ss.jpeg">
-</div> -->
+<div align="center">
+    <img width="200" src="./screenshots/na-sources.jpeg">
+    <img width="200" src="./screenshots/na-articles.jpeg">
+    <img width="200" src="./screenshots/na-search.jpeg">
+    <img width="200" src="./screenshots/na-webview.jpeg">
+</div>
 
 ## Release APK
-<a href="https://drive.google.com/">
+<a href="https://drive.google.com/open?id=13Do7d9jYt4DNmAqvflLDvu-NwB3uGE5L">
   <img src="https://img.shields.io/badge/Download%20on%20the-Google%20Drive-blue.svg?style=popout&logo=google-drive"/>
 </a>
 
